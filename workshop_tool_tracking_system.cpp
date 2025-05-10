@@ -1,125 +1,148 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
-
-class Tool 
-{
+class Tool
+ {
 protected:
     int tool_ID;
-    char toolName[50];
-    bool isAvailable;
+    char tool_Name[50];
+    bool is_Available;
 
 public:
-    Tool(int id = 0, const char* name = "") {
-        toolID = id;
-        strncpy(toolName, name, 49);
-        toolName[49] = '\0';
-        isAvailable = true;
+    Tool(int id = 0, const char* name = "")
+    {
+        tool_ID = id;
+        strncpy(tool_Name, name, 49);
+        tool_Name[49] = '\0';
+        is_Available = true;
     }
 
-    void issueTool() {
-        if (isAvailable) {
-            isAvailable = false;
-            cout << toolName << " has been issued.\n";
-        } else {
-            cout << toolName << " is already issued.\n";
+    void issueTool()
+    {
+        if (is_Available)
+        {
+            is_Available = false;
+            cout << tool_Name << " has been issued.\n";
+        }
+         else 
+        {
+            cout << tool_Name << " is already issued.\n";
         }
     }
 
-    void returnTool() {
-        isAvailable = true;
-        cout << toolName << " has been returned.\n";
+    void returnTool()
+    {
+        is_Available = true;
+        cout << tool_Name << " has been returned.\n";
     }
 
-    bool checkAvailability() const {
-        return isAvailable;
+    bool checkAvailability() const 
+    {
+        return is_Available;
     }
 
-    int getToolID() const {
-        return toolID;
+    int getToolID() const 
+    {
+        return tool_ID;
     }
 
-    const char* getToolName() const {
-        return toolName;
+    const char* getToolName() const
+    {
+        return tool_Name;
     }
 
-    virtual void displayToolInfo() const = 0; // Abstraction + Polymorphism
+    virtual void displayToolInfo() const = 0; // pure virtual function
 };
 
-// Derived Class 1
-class PowerTool : public Tool {
+class PowerTool : public Tool
+{
 private:
-    int batteryLife; // in hours
+    int batteryLife; // hrs
 
 public:
-    PowerTool(int id = 0, const char* name = "", int battery = 0)
-        : Tool(id, name), batteryLife(battery) {}
+    PowerTool(int id = 0, const char* name = "", int battery = 0):Tool(id, name), batteryLife(battery) {}
 
-    void displayToolInfo() const override {
-        cout << "Power Tool - ID: " << toolID
-             << ", Name: " << toolName
+    void displayToolInfo() const override
+    {
+        cout << "Power Tool - ID: " << tool_ID
+             << ", Name: " << tool_Name
              << ", Battery Life: " << batteryLife << " hrs"
-             << ", Available: " << (isAvailable ? "Yes" : "No") << endl;
+             << ", Available: " << (is_Available ? "Yes" : "No") << endl;
     }
 };
 
-// Derived Class 2
-class HandTool : public Tool {
+
+class HandTool : public Tool
+{
 private:
     float weight; // in kg
 
 public:
-    HandTool(int id = 0, const char* name = "", float w = 0.0)
-        : Tool(id, name), weight(w) {}
+    HandTool(int id = 0, const char* name = "", float w = 0.0):Tool(id, name), weight(w) {}
 
-    void displayToolInfo() const override {
-        cout << "Hand Tool - ID: " << toolID
-             << ", Name: " << toolName
-             << ", Weight: " << weight << " kg"
-             << ", Available: " << (isAvailable ? "Yes" : "No") << endl;
+    void displayToolInfo() const override 
+    {
+        cout << "Hand Tool - ID: " << tool_ID
+             << ", Name: " << tool_Name
+             << ", Weight: " << weight <<" kg"
+             << ", Available: " << (is_Available ? "Yes" : "No") << endl;
     }
 };
 
 // Tool inventory manager
-class ToolInventory {
+class ToolInventory 
+{
 private:
     Tool* tools[20];
     int count;
 
 public:
-    ToolInventory() {
+    ToolInventory() 
+    {
         count = 0;
         for (int i = 0; i < 20; ++i)
             tools[i] = nullptr;
     }
 
-    void addTool(Tool* t) {
-        if (count < 20) {
+    void addTool(Tool* t)
+    {
+        if (count < 20)
+        {
             tools[count++] = t;
-        } else {
+        }
+         else 
+        {
             cout << "Inventory full!\n";
         }
     }
 
-    void displayAllTools() const {
-        for (int i = 0; i < count; ++i) {
+    void displayAllTools() const
+    {
+        for (int i = 0; i < count; ++i)
+        {
             tools[i]->displayToolInfo();
         }
     }
 
-    void issueToolByID(int id) {
-        for (int i = 0; i < count; ++i) {
-            if (tools[i]->getToolID() == id) {
+    void issueToolByID(int id) 
+    {
+        for (int i = 0; i < count; ++i)
+        {
+            if (tools[i]->getToolID() == id)
+            {
                 tools[i]->issueTool();
                 return;
             }
         }
-        cout << "Tool not found!\n";
+        cout << "Tool not found!"<<endl;
     }
 
-    void returnToolByID(int id) {
-        for (int i = 0; i < count; ++i) {
-            if (tools[i]->getToolID() == id) {
+    void returnToolByID(int id) 
+    {
+        for (int i = 0; i < count; ++i) 
+        {
+            if (tools[i]->getToolID() == id) 
+            {
                 tools[i]->returnTool();
                 return;
             }
@@ -127,15 +150,18 @@ public:
         cout << "Tool not found!\n";
     }
 
-    ~ToolInventory() {
-        for (int i = 0; i < count; ++i) {
+    ~ToolInventory()
+    {
+        for (int i = 0; i < count; ++i) 
+        {
             delete tools[i];
         }
     }
 };
 
 // Main Function
-int main() {
+int main()
+ {
     ToolInventory inventory;
 
     inventory.addTool(new PowerTool(101, "Drill Machine", 4));
@@ -160,9 +186,3 @@ int main() {
 
     return 0;
 }
-
-
----
-
-Would you like a diagram (UML or class structure) to better visualize this system?
-
