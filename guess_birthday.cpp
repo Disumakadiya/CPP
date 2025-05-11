@@ -38,5 +38,4 @@ int main()
 
     cout << "\nYour birthday is on the " << day << "th!\n";
     return 0;
-    
 }
