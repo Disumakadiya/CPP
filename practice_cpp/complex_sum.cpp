@@ -10,6 +10,7 @@ public:
     {
         a = n1;
         b = n2;
+
     }
 
     // Friend function declaration
@@ -18,6 +19,7 @@ public:
     void print_no()
     {
         cout << "The number is " << a << " + " << b << "i" << endl;
+
     }
 };
 
@@ -36,11 +38,14 @@ int main()
     d1.getnumber(1, 4);
     d1.print_no();
 
+
     d2.getnumber(5, 8);
     d2.print_no();
 
+
     result = sum(d1, d2);
     result.print_no();
+
 
     return 0;
 }
