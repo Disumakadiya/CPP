@@ -10,6 +10,7 @@ public:
     {
         a = n1;
         b = n2;
+
     }
 
     // Friend function declaration
@@ -25,6 +26,7 @@ public:
 complex sum(complex c1, complex c2)
 {
     complex c3;
+
     c3.getnumber((c1.a + c2.a), (c1.b + c2.b));
     return c3;
 }
