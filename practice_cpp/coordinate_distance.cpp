@@ -35,6 +35,7 @@ cout<<"enter the 2nd point";
 point_2.get_data();
 
 double distance=calculate_dist(point_1,point_2);
+
  cout<<"distance  between 2 points is::"<<distance<<endl;
      return 0;
 }
