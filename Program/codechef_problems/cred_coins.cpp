@@ -12,5 +12,4 @@ int main() {
 	    int bag=total_coins/100;
 	    cout<<bag<<endl;
 	}
-
 }
