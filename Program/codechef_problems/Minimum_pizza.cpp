@@ -7,6 +7,7 @@ int main() {
 	while(T--)
 	{
 	    int n,x;
+		
 	    cin>>n>>x;
 	    
 	    int pizza=ceil(((float)n*x)/4);
