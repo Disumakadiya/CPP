@@ -4,7 +4,8 @@ using namespace std;
 int main() {
     int t;
     cin>>t;
-    while(t--){
+    while(t--)
+    {
         int n,x;
         cin>>n>>x;
         int a[n],b[n];
