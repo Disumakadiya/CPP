@@ -10,6 +10,9 @@ int main() {
 	    cin>>n;
 	    int profit=(n*50*30)/100;
 	    cout<<profit<<endl;
+
+
+		
    
 	}
 }
