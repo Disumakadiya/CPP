@@ -26,6 +26,8 @@ int main() {
 	           allinside=false;
 	       }
 		   
+
+		   
 	   }
 	   cout<<(allinside?"IN":"OUT")<<endl;
 	}
