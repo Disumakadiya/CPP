@@ -24,9 +24,7 @@ int main() {
 	       if(d[i]!=0)
 	       {
 	           allinside=false;
-	       }
-		   
-
+	       }  
 		   
 	   }
 	   cout<<(allinside?"IN":"OUT")<<endl;
