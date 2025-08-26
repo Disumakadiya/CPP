@@ -10,5 +10,7 @@ int main() {
 	    cin>>a>>b>>c;
 	     int L = max(a, c);
         cout << (L <= b ? "Yes" : "No") << "\n";
+
+		
 	}
 }
