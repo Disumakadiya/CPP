@@ -17,6 +17,7 @@ while(T--)
     {
         cout<<"RIGHT"<<endl;
     }
+    
 }
 
 }
