@@ -29,7 +29,6 @@ int main() {
         int N;
         cin>>N;
      cout<<SeatType[N]<<'\n';   
-    }
-    
+    }  
     return 0;
 }
