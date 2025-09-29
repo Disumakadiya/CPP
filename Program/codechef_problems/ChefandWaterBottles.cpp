@@ -6,6 +6,8 @@ int main() {
     cin>>T;
     while(T--)
     {
+
+        
         int  n,x,k;
         cin>>n>>x>>k;
         int bottle=k/x;
