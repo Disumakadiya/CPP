@@ -13,5 +13,7 @@ int main() {
         int bottle=k/x;
         int result=min(n,bottle);
         cout<<result<<endl;
+
+        
     }
 }
