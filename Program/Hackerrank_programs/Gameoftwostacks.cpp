@@ -2,10 +2,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 int twoStacks(int x, vector<int> a, vector<int> b) {
     int n = a.size(), m = b.size();
     int maxCount = 0;
 
+
+    
     for (int i = 0; i <= n; i++) {
         int sumA = accumulate(a.begin(), a.begin() + i, 0);
         if (sumA > x) break;
