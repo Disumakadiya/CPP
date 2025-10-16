@@ -11,6 +11,7 @@ int main() {
 
         if (y > x) {
             step = x;
+        }
         else if (x % y == 0) {
             step = x / y; 
         } 
