@@ -22,6 +22,5 @@ int main() {
             cout << "Charlie\n";
         }
     }
-
     return 0;
 }
